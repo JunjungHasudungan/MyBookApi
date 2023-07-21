@@ -18,7 +18,7 @@ class UserResource extends JsonResource
             'id'        => $this->id,
             'name'      => $this->name,
             'email'     => $this->email,
-            'todos'     => TodoResource::collection($this->whenLoaded('todos'))
+            'todos'     => TodoResource::collection($this->whenLoaded('todos')),
         ];
     }
 }

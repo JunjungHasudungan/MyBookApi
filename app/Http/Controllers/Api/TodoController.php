@@ -15,9 +15,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-    //    return TodoResource::collection(Todo::with('user')->get());
 
-        return new TodoCollection(Todo::with(['user'])->get());
+        return TodoResource::collection(Todo::with('user')->get());
     }
 
     /**

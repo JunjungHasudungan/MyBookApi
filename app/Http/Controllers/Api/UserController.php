@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return new UserCollection(User::with(['todos:id,title,description,created_at'])->get());
+        return UserResource::collection(User::with(['todos'])->get());
     }
 
     /**

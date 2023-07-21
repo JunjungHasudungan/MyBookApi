@@ -18,8 +18,9 @@ class TodoResource extends JsonResource
             'id'            => $this->id,
             'title'         => $this->title,
             'description'   => $this->description,
-            'user'          => UserResource::collection($this->whenLoaded('user')),
             'created_at'    => $this->created_at,
+            'user'          => $this->whenLoaded('user'),
+            // 'user'          => UserResource::collection($this->whenLoaded('user')),
         ];
     }
 }
