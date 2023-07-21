@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\{
     PostController,
+    TodoController,
     UserController,
 };
 use Illuminate\Http\Request;
@@ -26,4 +27,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::apiResources([
     'posts'     => PostController::class,
     'users'     => UserController::class,
+    'todos'     => TodoController::class,
 ]);
