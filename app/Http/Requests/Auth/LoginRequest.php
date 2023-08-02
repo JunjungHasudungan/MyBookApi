@@ -36,6 +36,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email.required'    => 'Email wajib diisi..',
+            'email.email'       => 'email tidak sesuai dengan data',
             'password.required' => 'Password wajib diisi..'
         ];
     }

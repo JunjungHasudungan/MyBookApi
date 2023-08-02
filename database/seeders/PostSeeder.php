@@ -24,3 +24,5 @@ class PostSeeder extends Seeder
         Post::insert($posts);
     }
 }
+
+// password

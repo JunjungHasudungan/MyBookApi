@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
 use App\Http\Resources\{
     PostResource,
     PostCollection,
@@ -29,9 +30,11 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        Post::create($request->validated());
+
+        return response()->json('data berhasil ditambahkan..');
     }
 
     /**
