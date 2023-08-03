@@ -32,6 +32,7 @@ class PostRequest extends FormRequest
     public function messages()
     {
         return [
+            'category.required'     => 'Kategori wajib dipilih..',
             'title.required'        => 'Judul Wajib di isi..',
             'title.min'             => 'Judul min 3 karakter..',
             'title.max'             => 'Judul min 20 karakter..',
