@@ -15,11 +15,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        try {
-            return new PostCollection(Post::all());
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
+        return new PostCollection(Post::all());
     }
 
     public function create()

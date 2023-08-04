@@ -16,10 +16,11 @@ class PostResource extends JsonResource
     {
         return [
             'id'                => $this->id,
+            'category'          => $this->category,
             'title'             => $this->title,
             'description'       => $this->description,
             'user_id'           => $this->user_id,
-            'created_at'        => $this->created_at,
+            'created_at'        => $this->created_at->diffForHumans(),
         ];
     }
 }
