@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Http\Resources\{
     PostResource,
     PostCollection,
@@ -38,7 +39,12 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        // return new PostResource($post);
+
+        return response()->json([
+            'data'  => $post,
+            'message'   => 'data ada kok',
+        ]);
     }
 
     /**
@@ -46,15 +52,22 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return response()->json([
+            'post' => $post,
+            'message' => 'data ada',
+    ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post->update($request->validated());
+
+        return new PostResource($post);
+
+        // return response()->json(['message' => 'data berhasil diupdate..']);
     }
 
     /**
