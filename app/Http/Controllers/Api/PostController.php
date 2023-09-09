@@ -39,12 +39,12 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        // return new PostResource($post);
+        return new PostResource($post);
 
-        return response()->json([
-            'data'  => $post,
-            'message'   => 'data ada kok',
-        ]);
+        // return response()->json([
+        //     'data'  => $post,
+        //     'message'   => 'data ada kok',
+        // ]);
     }
 
     /**
